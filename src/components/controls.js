@@ -6,31 +6,31 @@ function Controls(props){
     const controlButtons = {
         record: {
             label: "record",
-            imgSrc: "/images/round-record.png"
+            imgSrc: process.env.PUBLIC_URL + "/images/round-record.png"
         },
         stop: {
             label: "stop",
-            imgSrc: "/images/round-stop.png"
+            imgSrc: process.env.PUBLIC_URL + "/images/round-stop.png"
         },
         play: {
             label: "play",
-            imgSrc: "/images/round-play.png"
+            imgSrc: process.env.PUBLIC_URL + "/images/round-play.png"
         },
         pause: {
             label: "pause",
-            imgSrc: "/images/round-pause.png"
+            imgSrc: process.env.PUBLIC_URL + "/images/round-pause.png"
         },
         download: {
             label: "download",
-            imgSrc: "/images/round-blank.png"
+            imgSrc: process.env.PUBLIC_URL + "/images/round-blank.png"
         },
         left: {
             label: "left",
-            imgSrc: "/images/round-back.png"
+            imgSrc: process.env.PUBLIC_URL + "/images/round-back.png"
         },
         right: {
             label: "right",
-            imgSrc: "/images/round-forward.png"
+            imgSrc: process.env.PUBLIC_URL + "/images/round-forward.png"
         },
     }
 
@@ -44,7 +44,7 @@ function Controls(props){
             case "forward":
                 if (props.track <= 1 && props.track.length === props.track) break;
                 if (props.track === props.records.length){
-                    props.setTrack(1);
+                    
                     break;
                 }else{
                 props.setTrack(props.track + 1);

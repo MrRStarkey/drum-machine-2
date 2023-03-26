@@ -18,9 +18,6 @@ const gainNode = audioCtx.createGain();
 
 function App() {
 
-  
-
-
   const drumObj = {
        
     drums: [{
@@ -28,63 +25,63 @@ function App() {
         id: "Q",
         keycode: 81,
         label: "High Tom",
-        src: "/audio/hitom.wav"
+        src: process.env.PUBLIC_URL + "/audio/hitom.wav"
       },
       {
         pad: 2,
         id: "W",
         keycode: 87,
         label: "Mid Tom",
-        src: "/audio/midtom2.wav"
+        src: process.env.PUBLIC_URL + "/audio/midtom2.wav"
       },
       {
         pad: 3,
         id: "E",
         keycode: 69,
         label: "Low Tom",
-        src: "/audio/loetom.wav"
+        src: process.env.PUBLIC_URL + "/audio/loetom.wav"
       },
       {
         pad: 4,
         id: "A",
         keycode: 65,
         label: "Kick",
-        src: "/audio/808bd2.wav"
+        src: process.env.PUBLIC_URL + "/audio/808bd2.wav"
       },
       {
         pad: 5,
         id: "S",
         keycode: 83,
         label: "Open High Hat",
-        src: "/audio/707-ohh.wav"
+        src: process.env.PUBLIC_URL + "/audio/707-ohh.wav"
       },
       {
         pad: 6,
         id: "D",
         keycode: 68,
         label: "Foot High Hat",
-        src: "/audio/big-foot-hh.wav"
+        src: process.env.PUBLIC_URL + "/audio/big-foot-hh.wav"
       },
       {
         pad: 7,
         id: "Z",
         keycode: 90,
         label: "Snare",
-        src: "/audio/brass-sd2.wav"
+        src: process.env.PUBLIC_URL + "/audio/brass-sd2.wav"
       },
       {
         pad: 8,
         id: "X",
         keycode: 88,
         label: "Bright Open High Hat",
-        src: "/audio/909-bright-ohh.wav"
+        src: process.env.PUBLIC_URL + "/audio/909-bright-ohh.wav"
       },
       {
         pad: 9,
         id: "C",
         keycode: 67,
         label: "Collapsed Hat",
-        src: "/audio/909-collapsed-hat.wav"
+        src: process.env.PUBLIC_URL + "/audio/909-collapsed-hat.wav"
       }
 
     ]};  
