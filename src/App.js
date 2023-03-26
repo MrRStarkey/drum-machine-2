@@ -174,14 +174,7 @@ function App() {
             volume={volume} 
             rec={recording} 
             records={records} 
-            track={track}
-            /*trackPlaying={trackPlaying}
-            setTrackPlaying={setTrackPlaying} 
-            setTrack={setTrack}
-
-            play={handlePause} 
-            handleRecorder={handleRecorder} 
-            handleChange={handleVolumeControl}*//>
+            track={track} />
           <Controls 
             value={display} 
             volume={volume} 
