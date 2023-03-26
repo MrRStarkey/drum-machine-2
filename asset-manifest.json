@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/drum-machine-2/static/css/main.07337095.css",
+    "main.js": "/drum-machine-2/static/js/main.d8ecb648.js",
+    "static/js/787.c419f7a1.chunk.js": "/drum-machine-2/static/js/787.c419f7a1.chunk.js",
+    "static/media/silver-brushed-metal-texture-900x900.jpg": "/drum-machine-2/static/media/silver-brushed-metal-texture-900x900.e2cb557eaa2faf569ea8.jpg",
+    "static/media/Ledsim-JRz7o.ttf": "/drum-machine-2/static/media/Ledsim-JRz7o.714c8926bde9afc74a8a.ttf",
+    "index.html": "/drum-machine-2/index.html",
+    "main.07337095.css.map": "/drum-machine-2/static/css/main.07337095.css.map",
+    "main.d8ecb648.js.map": "/drum-machine-2/static/js/main.d8ecb648.js.map",
+    "787.c419f7a1.chunk.js.map": "/drum-machine-2/static/js/787.c419f7a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07337095.css",
+    "static/js/main.d8ecb648.js"
+  ]
+}
