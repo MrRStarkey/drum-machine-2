@@ -1,0 +1,258 @@
+@font-face {
+  font-family: "digital";   /*Can be any text*/
+  src: local("ledsim"),
+    url("./fonts/Ledsim-JRz7o.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "digital";
+}
+
+#audio-buttons {
+  border: 2px inset;
+  border-radius: 2px;
+  display: flex;
+  padding: 5px;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 90%;
+  
+}
+
+/*
+#audio-buttons * {
+  cursor: pointer;
+}
+*/
+
+#controls-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+}
+
+#display {
+  border: 2px inset;
+  padding-top: 5px;
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "digital";
+  font-size: 30px;
+  background-color: rgb(24, 17, 17, 1);
+  color: beige;
+}
+
+#display .line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2px;
+}
+
+#display .line span {
+  display: flex;
+}
+
+#display-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#display-control-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-height: calc(100%-2px);
+  align-items: center;
+  padding-top: 2px;
+  
+
+}
+
+
+#drum-machine {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height: 100%;
+  
+}
+
+#drumpad-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 80%;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+
+#records {
+  display: none;
+}
+
+#vol-control {
+  writing-mode: bt-lr; /* IE */
+  -webkit-appearance: slider-vertical; /* Chromium */
+  width: 10%;
+  /*padding-top: 10%;*/
+}
+
+#volume-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  
+}
+
+#volume-container p{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  
+}
+
+.audio-button {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  width: 33%;
+  height: 50%;
+  padding: 0px;
+}
+
+.audio-button p {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.audio-button img {
+  display: flex;
+  max-width: 75%;
+  max-height: 75%;
+
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: url("../public/images/silver-brushed-metal-texture-900x900.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App-header {
+  position: sticky;
+  background-color: #727171;
+  height: 46px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: solid;
+  font-family: "digital";
+  color: white;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.drum-pad-container {
+  background: transparent;
+  height: calc((33%) - 5px);
+  width: calc((33%) - 25px);
+  display: flex;
+  flex-direction: column;
+}
+
+.drum-pad-container .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  font-family: "digital";
+  padding-top: 5px;
+  
+}
+
+.drum-pad {
+  color: transparent;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgb(83, 0, 0);
+  background-color: rgba(179, 1, 1, 0.8);
+  border-radius: 5px;
+  margin: auto;
+}
+
+.pad-active{
+  background-color: red;
+}
+
+.drum-pad:hover{
+  background-color: rgba(255, 0, 0, .6);
+}
+
+
+@media only screen and (min-width: 767px) {
+
+
+  #drum-machine{
+    flex-direction: row;
+  }
+  #drumpad-container{
+    height: 100%;
+    width: 50%;
+  }
+  #display-control-container{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-height: 420px){
+  #display {
+    font-size: 1.1rem;
+  }
+
+  .audio-button {
+    flex-direction: row;
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .audio-button p {
+    margin: 0%;
+    padding-right: 5px;
+    font-size: .7rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}

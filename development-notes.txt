@@ -1,0 +1,14 @@
+General notes:
+
+- colorscheme update
+
+- add additoinal drum kits or a way to customize pads
+
+- add volume slider / knob
+
+- add effects to the buttons onclick / keypress
+
+
+
+add the following link to credit the author of the buttons
+<a href="https://www.freevector.com/music-control-buttons">FreeVector.com</a>
