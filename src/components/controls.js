@@ -1,4 +1,5 @@
 import React from "react";
+import Tappable from "react-tappable";
 
 function Controls(props){
 
@@ -77,11 +78,11 @@ function Controls(props){
             
             <div id="audio-buttons">
                 
-                <div id="play" className="audio-button" onClick={()=>{props.play(props.records[props.track-1])}} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>PLAY</p><img src={props.trackPlaying ? controlButtons.pause.imgSrc : controlButtons.play.imgSrc} alt=""/></div>
-                <div id="back" className="audio-button" onClick={handleTrack} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>BACK</p><img src={controlButtons.left.imgSrc} alt=""/></div>
-                <div id="forward" className="audio-button" onClick={handleTrack} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>FWD</p><img src={controlButtons.right.imgSrc} alt=""/></div>
-                <div id="record" className="audio-button" onClick={props.handleRecorder} style={{cursor: 'pointer'}}><p>REC</p><img src={controlButtons.record.imgSrc} alt=""/></div>
-                <div id="delete" className="audio-button" onClick={handleDelete} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>DEL</p><img src={controlButtons.download.imgSrc} alt=""/></div>
+                <Tappable id="play" className="audio-button" onTap={()=>{props.play(props.records[props.track-1])}} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>PLAY</p><img src={props.trackPlaying ? controlButtons.pause.imgSrc : controlButtons.play.imgSrc} alt=""/></Tappable>
+                <Tappable id="back" className="audio-button" onTap={handleTrack} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>BACK</p><img src={controlButtons.left.imgSrc} alt=""/></Tappable>
+                <Tappable id="forward" className="audio-button" onTap={handleTrack} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>FWD</p><img src={controlButtons.right.imgSrc} alt=""/></Tappable>
+                <Tappable id="record" className="audio-button" onTap={props.handleRecorder} style={{cursor: 'pointer'}}><p>REC</p><img src={controlButtons.record.imgSrc} alt=""/></Tappable>
+                <Tappable id="delete" className="audio-button" onTap={handleDelete} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>DEL</p><img src={controlButtons.download.imgSrc} alt=""/></Tappable>
                 <a id="download" className="audio-button" href={props.records.length > 0 ? props.records[props.track - 1].src : " "} download="audio.wav" style={props.track === 0 ? {pointerEvents: 'none'} : {}}><p>SAVE</p><img src={controlButtons.download.imgSrc} alt=""/></a>
             </div>
             <div id="records" /> 

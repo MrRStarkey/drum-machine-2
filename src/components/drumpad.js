@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Tappable from 'react-tappable';
 
 function Drumpad({ /*drumObj,*/ drum, displayHandler, volume/*, audioCtx, gainNode, destination, recorder,*/, handlePlaySound }){
 
@@ -56,7 +57,7 @@ function Drumpad({ /*drumObj,*/ drum, displayHandler, volume/*, audioCtx, gainNo
 
 
     return(
-        <div className="drum-pad-container" id={drum.label} onClick={playClip}>
+        <Tappable className="drum-pad-container" id={drum.label} /*onTouchStart={playClip} onClick={playClip}*/ onTap={playClip}>
             <div className={`drum-pad`} id={drum.pad} style={ active ? activeStyle:{}}>
                 {drum.id}
                 <audio src={drum.src} id={drum.id} className="clip"></audio>    
@@ -66,7 +67,7 @@ function Drumpad({ /*drumObj,*/ drum, displayHandler, volume/*, audioCtx, gainNo
                 <div>KEY {drum.id}</div>
             </div>
             
-        </div>
+        </Tappable>
     );
 }
 
