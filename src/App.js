@@ -102,21 +102,31 @@ function App() {
 
   const handlePause = (e) => {
     
-    if(trackPlaying){
-      e.onended = () => {
-        setTrackPlaying(!trackPlaying);
+    if (e){
+      setTrackPlaying(!trackPlaying);
+      console.log(`${e}exists`);
+      if(trackPlaying){
+
+        console.log("pause");
+        e.pause();
+      }else if (e.currentTime !== 0){
+        console.log("play");
+        e.play();
+      
+      }else{
+        handlePlaySound(e);
       }
-      //let sound = e;
-      e.pause();
-    }else if (e.currentTime !== 0){
-      e.play();
-    
-    }else{
-      handlePlaySound(e);
+
+      e.onended = () => {
+        setTrackPlaying(false);
+        console.log("track is done playing")
+
+      }
+      
+    } else {
+      return
     }
-    setTrackPlaying(!trackPlaying);
-    
-    }
+  }
   
 
   const handlePlaySound = (e) => {
