@@ -10,11 +10,12 @@ import "./fonts/Ledsim-JRz7o.ttf";
 
 // web audio
 
+const options = {mimeType: "audio/webm"};
 const audioCtx = new AudioContext();
 const destination = audioCtx.createMediaStreamDestination();
-const recorder = new MediaRecorder(destination.stream);
+const recorder = new MediaRecorder(destination.stream, options);
 const gainNode = audioCtx.createGain();
-
+console.log(recorder.mimeType);
 
 function App() {
 
@@ -137,13 +138,14 @@ function App() {
       recorder.start();
       recorder.ondataavailable = (e) => chunks.push(e.data);
       recorder.onstop = (e) => {
-        const blob = new Blob(chunks, {'type': 'audio/wav; codecs=wave'});
+        console.log(recorder.mimeType);
+        const blob = new Blob(chunks, {type: "audio/webm"});
         const url = URL.createObjectURL(blob);
         let a;
         a = new Audio()
         a.src = url;
         a.controls = true;
-        a.download = 'a.wav';
+        //a.download = 'a.mp3';
         a.preload = 'auto';
         document.getElementById('records').appendChild(a);
         setRecords([...records, a]);
