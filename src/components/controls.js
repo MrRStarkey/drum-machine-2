@@ -83,7 +83,7 @@ function Controls(props){
                 <Tappable id="forward" className="audio-button" onTap={handleTrack} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>FWD</p><img src={controlButtons.right.imgSrc} alt=""/></Tappable>
                 <Tappable id="record" className="audio-button" onTap={props.handleRecorder} style={{cursor: 'pointer'}}><p>REC</p><img src={controlButtons.record.imgSrc} alt=""/></Tappable>
                 <Tappable id="delete" className="audio-button" onTap={handleDelete} style={props.track === 0 ? {cursor: 'initial'} : {cursor: 'pointer'}}><p>DEL</p><img src={controlButtons.download.imgSrc} alt=""/></Tappable>
-                <a id="download" className="audio-button" href={props.records.length > 0 ? props.records[props.track - 1].src : " "} style={props.track === 0 ? {pointerEvents: 'none'} : {}}><p>SAVE</p><img src={controlButtons.download.imgSrc} alt=""/></a>
+                <a id="download" download={`track${props.track}`} className="audio-button" href={props.records.length > 0 ? props.records[props.track - 1].src : " "} style={props.track === 0 ? {pointerEvents: 'none'} : {}}><p>SAVE</p><img src={controlButtons.download.imgSrc} alt=""/></a>
             </div>
             <div id="records" /> 
         </div>

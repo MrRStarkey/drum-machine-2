@@ -155,7 +155,7 @@ function App() {
         a = new Audio()
         a.src = url;
         a.controls = true;
-        //a.download = 'a.mp3';
+        a.download = 'a.mp3';
         a.preload = 'auto';
         document.getElementById('records').appendChild(a);
         setRecords([...records, a]);
