@@ -10,12 +10,19 @@ import "./fonts/Ledsim-JRz7o.ttf";
 
 // web audio
 
-const options = {mimeType: "audio/webm"};
+import { MediaRecorder, register } from 'extendable-media-recorder';
+import { connect } from 'extendable-media-recorder-wav-encoder';
+
+register(connect());
+
+//const options = {mimeType: "audio/webm"};
 const audioCtx = new AudioContext();
 const destination = audioCtx.createMediaStreamDestination();
-const recorder = new MediaRecorder(destination.stream, options);
+const recorder = new MediaRecorder(destination.stream);
 const gainNode = audioCtx.createGain();
 console.log(recorder.mimeType);
+
+
 
 function App() {
 
@@ -87,18 +94,19 @@ function App() {
 
     ]};  
     
-   
+  
   const [display, setDisplay] = useState("");
   const [volume, setVolume] = useState(1);
   const [recording, setRecording] = useState(false);
   const [records, setRecords] = useState([]);
   const [track, setTrack] = useState(0);
   const [trackPlaying, setTrackPlaying] = useState(false);
-
+  
   const handleVolumeControl = (e) => {
     setVolume(e.target.value);
     gainNode.gain.value = e.target.value;
   };
+
 
   const handlePause = (e) => {
     
@@ -126,13 +134,12 @@ function App() {
     } else {
       return
     }
-  }
+  };
   
 
   const handlePlaySound = (e) => {
     
     let sound = e;
-    console.log(sound);
     audioCtx.resume();
     sound.currentTime = 0;
     sound.play();
@@ -142,6 +149,8 @@ function App() {
     gainNode.connect(destination);
   };
 
+  
+
   const handleRecorder = (e) => {
     if (!recording) {
       let chunks = [];
@@ -149,7 +158,7 @@ function App() {
       recorder.ondataavailable = (e) => chunks.push(e.data);
       recorder.onstop = (e) => {
         console.log(recorder.mimeType);
-        const blob = new Blob(chunks, {type: "audio/webm"});
+        const blob = new Blob(chunks, {type: "audio/wav"});
         const url = URL.createObjectURL(blob);
         let a;
         a = new Audio()
@@ -171,19 +180,23 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" onClick={void(0)}>
       <div className="App-header">React Drum Machine</div>
       <div id="drum-machine">
         <div id="drumpad-container">
+
           {drumObj.drums.map((drum) => <Drumpad key={drum.id} drum={drum} drumObj={drumObj} handlePlaySound={handlePlaySound} displayHandler={setDisplay} volume={volume}/>)}
         </div>
+
         <div id="display-control-container">
+
           <Display 
             value={display} 
             volume={volume} 
             rec={recording} 
             records={records} 
             track={track} />
+
           <Controls 
             value={display} 
             volume={volume} 
@@ -198,10 +211,11 @@ function App() {
             play={handlePause} 
             handleRecorder={handleRecorder} 
             handleChange={handleVolumeControl}/>
+        
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;
